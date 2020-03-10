@@ -28,6 +28,18 @@ function ShowTab(e) {
         case '6':
             Exercise6(tab);
             break;
+        case '7':
+            Exercise7(tab);
+            break;
+        case '8':
+            Exercise8(tab);
+            break;
+        case '9':
+            Exercise9(tab);
+            break;
+        case '10':
+            Exercise10(tab);
+            break;
         default:
             return;
             break;
