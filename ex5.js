@@ -1,4 +1,5 @@
 function Exercise5(tab) {
+    //Hides all other tabs and shows this one
     Initialize(tab);
     //Adds a event listener in the button
     document.getElementById('btnEx5').addEventListener('click', RunEx5);
