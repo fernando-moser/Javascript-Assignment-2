@@ -22,6 +22,9 @@ function ShowTab(e) {
         case '4':
             Exercise4(tab);
             break;
+        case '5':
+            Exercise5(tab);
+            break;
         default:
             return;
             break;
