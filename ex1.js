@@ -1,39 +1,38 @@
 function Exercise1(tab) {
+    //Hides all other tabs
     HideAll();
-    CleanResults('resultsEx1');
+    //Shows this tab
     document.getElementById(tab).classList.remove('hidden');
-    let button = document.getElementById('btnEx1');
-    button.addEventListener('click', () => {
-        //1. get the min input
-        let min = document.getElementById('minEx1').value;
-        //2. get the max input
-        let max = document.getElementById('maxEx1').value;
-        //3. validate inputs
-        let errorMessage = document.getElementById('errorEx1'); // gets the div display
-        //3.1 If they're not numbers display error message
-        if (!isNaN(min) && !isNaN(max)) {
-            var minNum = Number(min);
-            var maxNum = Number(max);
-            //3.2 If min > max display error message
-            if (minNum > maxNum) {
-                errorMessage.innerHTML = "Min cannot be lesser than Max";
-                return;
-            }
-        } else {
-            errorMessage.innerHTML = "Inputs must be numbers";
-            return;
-        }
-        //4. Display outputs
-        //4.1 Li of inputs
-        let result = "<ul>"
-        result += "<li>Input: " + min + '</li>';
-        result += "<li>Input: " + max + '</li>';
-        //4.2 Li of All integers between
-        for (let i = minNum; i <= maxNum; i++) {
-            result += '<li>Output: ' + i + '</li>';
-            // console.log("teste" + i);
-        }
-        result += '</ul>';
-        document.getElementById('resultsEx1').innerHTML = result;
-    });
+    //Adds an event listener in the button and Runs the logic
+    document.getElementById('btnEx1').addEventListener('click', RunEx1);
+}
+//ftn that runs the logic
+function RunEx1() {
+    //Clears all previous results
+    CleanResults('inputEx1','resultsEx1', 'errorEx1');
+    //Gets input from user
+    let min = document.getElementById('minEx1').value;
+    let max = document.getElementById('maxEx1').value;
+    //Validates if all integers
+    if (!isInteger(min) || !isInteger(max)) {
+        SetHTMLElement('errorEx1','Inputs must be numbers');
+        return;
+    }
+    //Converts to numbers
+    let minNum = Number(min);
+    let maxNum = Number(max);
+    //Validates min and max are in correct order
+    if (minNum > maxNum) {
+        SetHTMLElement('errorEx1','Min cannot be lesser than Max');
+        return;
+    }
+    //Displays outputs
+    //Inputs
+    SetHTMLElement('inputEx1',BuildList(`Min: ${minNum}`,`Max: ${maxNum}`));
+    //Outputs
+    let result = [];
+    for (let i = minNum; i <= maxNum; i++) {
+        result.push(i);
+    }
+    SetHTMLElement('resultsEx1',BuildListArray(result));
 }

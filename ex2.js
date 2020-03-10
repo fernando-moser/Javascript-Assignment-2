@@ -1,36 +1,45 @@
 function Exercise2(tab) {
+    //Hides all tabs
     HideAll();
-    CleanResults('inputEx2', 'outputEx2');
+    //Shows this tab
     document.getElementById(tab).classList.remove('hidden');
-    document.getElementById('btnEx2').addEventListener('click', () => {
-        let inputString = document.getElementById('inputEx2').value;
-        let inputStringArray = inputString.split(',');
-        let inputNumbersArray = [];
-        
-        inputStringArray.forEach(item => {
-            if (!isInteger(item)) { // Validation
-                SetHTMLElement('errorEx2', "All inputs must be integer numbers"); // Displays error message
-                return;
-            } else {
-                inputNumbersArray.push(Number(item)); //Convertion
-                SetHTMLElement('errorEx2', ''); // Cleans error message
-            }
-
-        });
-
-        let total = 0, average, smallest = inputNumbersArray[0], largest = inputNumbersArray[0];
-        for (let i = 0; i < inputNumbersArray.length; i++) {
-            let number = inputNumbersArray[i];
-            total += number;
-            if (smallest > number) {
-                smallest = number;
-            }
-            if (largest < number) {
-                largest = number;
-            }
-        }
-        average = Math.round(total / inputNumbersArray.length);
-        SetHTMLElement('inputEx2', BuildList(inputString));
-        SetHTMLElement('outputEx2',BuildList(`Total: ${total}, Average: ${average}, Smallest: ${smallest} Largest: ${largest}`));
+    //Add a event listener in the button and
+    document.getElementById('btnEx2').addEventListener('click', RunEx2);
+}
+//Ftn that runs the logic
+function RunEx2() {
+    //Clears all previous results
+    CleanResults('inputEx2', 'outputEx2', 'errorEx2');
+    //Gets input from user
+    let inputString = document.getElementById('valuesEx2').value;
+    //Splits string
+    let inputStringArray = inputString.split(',');
+    //Attempts to convert to integers
+    let isAllIntegers = inputStringArray.every(item => {
+        return isInteger(item);
     });
+    //Checks if all integers
+    if (!isAllIntegers) {
+        SetHTMLElement('errorEx2', "All inputs must be integer numbers");
+        return;
+    }
+    // Converts to Number
+    let inputNumbersArray = inputStringArray.map(item => {
+        return Number(item);
+    });
+    // Sums up all numbers
+    let sum = inputNumbersArray.reduce((total, value) => {
+        return total + value;
+    });
+    // Sorts the array
+    inputNumbersArray = inputNumbersArray.sort((a, b) => {
+        return a - b;
+    });
+    //Variables for results
+    let average = Math.round(sum / inputNumbersArray.length);
+    let smallest = inputNumbersArray[0];
+    let Largest = inputNumbersArray[inputNumbersArray.length - 1];
+    //Displays
+    SetHTMLElement('inputEx2', BuildList(inputString));
+    SetHTMLElement('outputEx2', BuildList(`Total: ${sum}, Average: ${average}, Smallest: ${smallest} Largest: ${Largest}`));
 }

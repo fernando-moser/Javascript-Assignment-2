@@ -1,8 +1,8 @@
 function Exercise5(tab) {
     HideAll();
-    CleanResults('inputEx5', 'outputEx5');
     document.getElementById(tab).classList.remove('hidden');
     document.getElementById('btnEx5').addEventListener('click', () => {
+        CleanResults('inputEx5', 'outputEx5','errorEx5');
 
         //1. Get the input from user
         let inputStringValues = document.getElementById('valuesEx5').value;
@@ -12,7 +12,7 @@ function Exercise5(tab) {
         //2.1 Validate key
         let inputNumberValues = 0, inputNumberMax;
         if (!isInteger(inputStringValues) || !isInteger(inputStringMax)) {
-            DisplayHTMLMessage('errorEx5', 'Numbers must be integers');
+            SetHTMLElement('errorEx5', 'Numbers must be integers');
             return;
         } else {
             inputNumberValues = Number(inputStringValues);
