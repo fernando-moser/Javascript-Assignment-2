@@ -1,0 +1,24 @@
+html, body, ul, li {
+ margin: 0;
+ padding: 0 20px;
+}
+
+#tabList {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+}
+.tabSelector {
+    box-sizing: border-box;
+    width: 10%;
+    background-color: grey;
+    color: lightgray;
+    text-align: center;
+    border: 1px solid lightgray;
+}
+.hidden {
+    display: none;
+}
+.green {
+    background-color: green;
+}
