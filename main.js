@@ -38,5 +38,12 @@ function HideAll() {
     });
 }
 
+function Initialize(tab) {
+    //Hides all other tabs
+    HideAll();
+    //Shows this tab
+    document.getElementById(tab).classList.remove('hidden');
+}
+
 
 

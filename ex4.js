@@ -1,24 +1,28 @@
 function Exercise4(tab) {
-    HideAll();
-    CleanResults('inputEx4','outputEx4');
-    document.getElementById(tab).classList.remove('hidden');
-    document.getElementById('btnEx4').addEventListener('click', () => {
-        let inputString = document.getElementById('valuesEx4').value;
-        let inputNumber = 0;
-        if (!isInteger(inputString)) {
-            DisplayHTMLMessage('errorEx4', 'Number must be an integer number');
-            CleanResults('inputEx4', 'outputEx4');
-            return;
-        } else {
-            inputNumber = Number(inputString);
-            CleanResults('errorEx4');
-        }
-        SetHTMLElement('inputEx4',BuildList(`Num: ${inputString}`));
-        let output = "";
-        for (let i = 0; i < inputNumber; i++) {
-            output += '*';
-        }
-        SetHTMLElement('outputEx4',BuildList(output));
-    });
+    Initialize(tab);
+    //Adds a event listener in the button
+    document.getElementById('btnEx4').addEventListener('click', RunEx4);
+    
+}
 
+function RunEx4() {
+    //Clears previous results
+    CleanResults('inputEx4','outputEx4','errorEx4');
+    //Gets input from user
+    let inputString = document.getElementById('valuesEx4').value;
+    //Validates input
+    if (!isInteger(inputString)) {
+        SetHTMLElement('errorEx4', 'Number must be an integer number');
+        return;
+    }
+    //Converts into integer
+    let inputNumber = Number(inputString);
+    //Displays input values
+    SetHTMLElement('inputEx4',BuildList(`Num: ${inputString}`));
+    //Displays output values by adding *
+    let output = "";
+    for (let i = 0; i < inputNumber; i++) {
+        output += '*';
+    }
+    SetHTMLElement('outputEx4',BuildList(output));
 }

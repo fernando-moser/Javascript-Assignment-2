@@ -1,8 +1,5 @@
 function Exercise2(tab) {
-    //Hides all tabs
-    HideAll();
-    //Shows this tab
-    document.getElementById(tab).classList.remove('hidden');
+    Initialize(tab);
     //Add a event listener in the button and
     document.getElementById('btnEx2').addEventListener('click', RunEx2);
 }

@@ -1,41 +1,45 @@
 function Exercise3(tab) {
-    HideAll();
-    CleanResults('inputEx3', 'outputEx3','errorEx3');
-    document.getElementById(tab).classList.remove('hidden');
+    Initialize(tab);
+    //Adds a event listener in the button
     document.getElementById('btnEx3').addEventListener('click', RunEx3);
 }
-
+//ftn that runs the exercise
 function RunEx3() {
+    //Clears all sections
+    CleanResults('inputEx3', 'outputEx3','errorEx3');
+    //Gets input from user
     let inputString = document.getElementById('valuesEx3').value;
     let keyInputString = document.getElementById('keyEx3').value;
-    //2. Split the values
+    //Splits values into an array
     let inputStringArray = inputString.split(',');
-    //3. Validate if input is not a Number and Convert them to numbers
-    //3.1 Validate key
+    //Validates key value
     if (!isInteger(keyInputString)) {
         SetHTMLElement('errorEx3', 'key must be integer number');
         return;
     }
+    //Converts key to integer
     let key = Number(keyInputString);
-    //3.2 Validate numbers
+    //Validates values inputs
     let isAllNumbers = inputStringArray.every(item => {
         return isInteger(item);
     });
+    //If they're not numbers, displays msg
     if(!isAllNumbers) {
         SetHTMLElement('errorEx3', 'All inputs must be integer numbers');
         return;
     }
+    //Converts values into numbers
     let inputNumbersArray = inputStringArray.map(item => {
         return Number(item);
     });
-    // 4 Count how many times the key apperas
+    //Counts key values
     let howManyTimesTheKeyAppears = 0;
     inputNumbersArray.forEach(item => {
         if (key === item) {
             howManyTimesTheKeyAppears++;
         }
     });
-    //8. Display the results
+    //Displays the results
     SetHTMLElement('inputEx3',BuildList(`Nums: ${inputString}`,`Key: ${keyInputString}`));
     SetHTMLElement('outputEx3',BuildList(howManyTimesTheKeyAppears));
 }
