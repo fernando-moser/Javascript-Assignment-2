@@ -21,13 +21,12 @@ function RunEx7() {
         cost = 3;
     }
     //Currency formater
-    const options2 = { style: 'currency', currency: 'USD' };
-    const numberFormater = new Intl.NumberFormat('en-US', options2);
+    const formater = GetFormater();
     //Variables for displaying
     let baseCost = num * cost;
     let tax = baseCost * 0.15;
     let total = Math.round(baseCost + tax);
     //Display outputs
     SetHTMLElement('inputEx7',BuildList(inputStringValues));
-    SetHTMLElement('outputEx7',BuildList(`Base Cost: ${numberFormater.format(baseCost)}, Tax: ${numberFormater.format(tax)}, Total Cost: ${numberFormater.format(total)}`));
+    SetHTMLElement('outputEx7',BuildList(`Base Cost: ${formater.format(baseCost)}, Tax: ${formater.format(tax)}, Total Cost: ${formater.format(total)}`));
 }

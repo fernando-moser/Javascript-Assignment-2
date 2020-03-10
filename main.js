@@ -60,5 +60,11 @@ function Initialize(tab) {
     document.getElementById(tab).classList.remove('hidden');
 }
 
+function GetFormater() {
+    const options = { style: 'currency', currency: 'USD' };
+    const numberFormater = new Intl.NumberFormat('en-US', options);
+    return numberFormater;
+}
+
 
 
