@@ -1,11 +1,12 @@
 window.onload = function () {
+    //Hides all tabs
     HideAll();
-
+    //Adds an event listener in the list
     this.document.getElementById('tabList').addEventListener('click', ShowTab);
 }
 
 function ShowTab(e) {
-
+    
     let button = e.target.innerHTML;
     let tab = `tab${e.target.innerHTML}`;
 
