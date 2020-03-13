@@ -21,54 +21,52 @@
 </head>
 
 <body>
-    <h1>JavaScript Programming Exercises</h1>
-    <ul id="tabList">
-        <li id="tabIcon1" class="tabSelector">1</li>
-        <li id="tabIcon2" class="tabSelector">2</li>
-        <li id="tabIcon3" class="tabSelector">3</li>
-        <li id="tabIcon4" class="tabSelector">4</li>
-        <li id="tabIcon5" class="tabSelector">5</li>
-        <li id="tabIcon6" class="tabSelector">6</li>
-        <li id="tabIcon7" class="tabSelector">7</li>
-        <li id="tabIcon8" class="tabSelector">8</li>
-        <li id="tabIcon9" class="tabSelector">9</li>
-        <li id="tabIcon10" class="tabSelector">10</li>
-    </ul>
+    <h1 class="page-title">JavaScript Programming Exercises</h1>
+    <div id="tabList">
+        <div id="1" class="tabSelector">Exercise 1</div>
+        <div id="2" class="tabSelector">Exercise 2</div>
+        <div id="3" class="tabSelector">Exercise 3</div>
+        <div id="4" class="tabSelector">Exercise 4</div>
+        <div id="5" class="tabSelector">Exercise 5</div>
+        <div id="6" class="tabSelector">Exercise 6</div>
+        <div id="7" class="tabSelector">Exercise 7</div>
+        <div id="8" class="tabSelector">Exercise 8</div>
+        <div id="9" class="tabSelector">Exercise 9</div>
+        <div id="10" class="tabSelector">Exercise 10</div>
+    </div>
     <div class="tabContainer">
         <!-- Exercise 1 -->
-        <div id="tab1" class="tab">
-            <h1>Enter two numbers</h1>
+        <div id="tab1" class="tab container">
+            <h1 class="exercise-label">Enter two numbers</h1>
+            
             <label>Min: </label><input id="minEx1">
             <label>Max: </label><input id="maxEx1">
             <button id='btnEx1'>Display</button>
-            <div id="errorEx1"></div>
-            Input:
-            <div id="inputEx1"></div>
-            Output:
-            <div id="resultsEx1"></div>
+            <div id="errorEx1" class="error"></div>
+            <div id="inputEx1" class="input"></div>
+            <h2 class="output-label">Output:</h2>
+            <div id="resultsEx1" class="output"></div>
         </div>
         <!-- Exercise 2 -->
         <div id="tab2" class="tab">
-            Enter a set of coma separated values
-            <input id="valuesEx2">
+            <h1 class="exercise-label">Enter a set of coma separated values</h1>
+            <label>Values: </label><input id="valuesEx2">
             <button id="btnEx2">Stats</button>
-            <div id="errorEx2"></div>
-            Input:
-            <div id="inputEx2"></div>
-            Output:
-            <div id="outputEx2"></div>
+            <div id="errorEx2" class="error"></div>
+            <div id="inputEx2" class="input"></div>
+            <h2 class="output-label">Output:</h2>
+            <div id="outputEx2" class="output"></div>
         </div>
         <!-- Exercise 3 -->
         <div id="tab3" class="tab">
-            Enter a set of coma separated values<br><br>
-            Values<input id="valuesEx3"><br>
-            Key<input id="keyEx3">
+            <h1 class="exercise-label">Enter a set of coma separated values</h1>
+            <label>Values: </label><input id="valuesEx3">
+            <label>Key: </label><input id="keyEx3">
             <button id="btnEx3">Search</button>
-            <div id="errorEx3"></div><br>
-            Input:
-            <div id="inputEx3"></div>
-            Output:
-            <div id="outputEx3"></div>
+            <div id="errorEx3" class="error"></div><br>
+            <div id="inputEx3" class="input"></div>
+            <h2 class="output-label">Output:</h2>
+            <div id="outputEx3" class="output"></div>
         </div>
         <!-- Exercise 4 -->
         <div id="tab4" class="tab">
@@ -139,7 +137,17 @@
             <div id="outputEx9"></div>
         </div>
         <!-- Exercise 10 -->
-        <div id="tab10" class="tab"></div>
+        <div id="tab10" class="tab">
+            Enter 1 angle <input id="value1Ex10"><br>
+            Enter 2 angle <input id="value2Ex10"><br>
+            Enter 3 angle <input id="value3Ex10"><br>
+            <button id="btnEx10">Calculate</button>
+            <div id="errorEx10"></div><br>
+            Input:
+            <div id="inputEx10"></div>
+            Output:
+            <div id="outputEx10"></div>
+        </div>
     </div>
 </body>
 

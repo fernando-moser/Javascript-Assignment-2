@@ -7,39 +7,38 @@ window.onload = function () {
 
 function ShowTab(e) {
     
-    let button = e.target.innerHTML;
-    let tab = `tab${e.target.innerHTML}`;
+    let item = e.target.id;
 
-    switch (button) {
+    switch (item) {
         case '1':
-            Exercise1(tab);
+            Exercise1(item);
             break;
         case '2':
-            Exercise2(tab);
+            Exercise2(item);
             break;
         case '3':
-            Exercise3(tab);
+            Exercise3(item);
             break;
         case '4':
-            Exercise4(tab);
+            Exercise4(item);
             break;
         case '5':
-            Exercise5(tab);
+            Exercise5(item);
             break;
         case '6':
-            Exercise6(tab);
+            Exercise6(item);
             break;
         case '7':
-            Exercise7(tab);
+            Exercise7(item);
             break;
         case '8':
-            Exercise8(tab);
+            Exercise8(item);
             break;
         case '9':
-            Exercise9(tab);
+            Exercise9(item);
             break;
         case '10':
-            Exercise10(tab);
+            Exercise10(item);
             break;
         default:
             return;
@@ -52,13 +51,18 @@ function HideAll() {
     elements.forEach(element => {
         element.classList.add('hidden');
     });
+    let menus = document.querySelectorAll('.tabSelector');
+    menus.forEach(menu => {
+        menu.classList.remove('selected');
+    });
 }
 
-function Initialize(tab) {
+function Initialize(item) {
     //Hides all other tabs
     HideAll();
     //Shows this tab
-    document.getElementById(tab).classList.remove('hidden');
+    document.getElementById(`tab${item}`).classList.remove('hidden');
+    document.getElementById(item).classList.add('selected');
 }
 
 function GetFormater() {

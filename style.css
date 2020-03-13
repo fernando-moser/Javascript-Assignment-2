@@ -1,14 +1,16 @@
-html, body, ul, li {
- margin: 0;
- padding: 0 20px;
-}
 * {
     font-family: Arial, Helvetica, sans-serif;
+}
+html, body {
+ margin: 0;
+ padding: 0 30px;
+}
+.page-title {
+    padding: 20px 5px;
 }
 #tabList {
     display: flex;
     flex-direction: row;
-    list-style: none;
 }
 .tabSelector {
     box-sizing: border-box;
@@ -17,10 +19,38 @@ html, body, ul, li {
     color: lightgray;
     text-align: center;
     border: 1px solid lightgray;
+    padding: 5px 10px;
+    border-radius: 20px 20px 0 0;
 }
 .hidden {
     display: none;
 }
-.green {
-    background-color: green;
+.tab {
+    width: 100%;
+    height: 80vh;
+    box-sizing: border-box;
+    border: 1px solid lightgray;
+    border-top: none;
 }
+.selected {
+    color: black;
+    background-color: #fff;
+    border-bottom: none;
+}
+h1,h2 {
+    margin: 0;
+}
+.exercise-label {
+    padding: 40px;
+}
+label,ul {
+    padding-left: 40px;
+}
+.output-label,.error,output {
+    padding: 20px 40px;
+}
+li {
+    list-style: none;
+    padding: 4px 0;
+}
+
