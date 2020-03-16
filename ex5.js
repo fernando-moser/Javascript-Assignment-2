@@ -13,8 +13,8 @@ function RunEx5() {
     let inputStringValues = document.getElementById('valuesEx5').value;
     let inputStringMax = document.getElementById('maxEx5').value;
     //Validates input
-    if (!isInteger(inputStringValues) || !isInteger(inputStringMax)) {
-        SetHTMLElement('errorEx5', 'Numbers must be integers');
+    if (!isPositiveInteger(inputStringValues) || !isPositiveInteger(inputStringMax)) {
+        SetHTMLElement('errorEx5', 'All inputs must be positive integer numbers');
         return;
     }
     //Converts into integer

@@ -8,8 +8,8 @@ function RunEx8() {
     //Gets input from user
     let bars = document.getElementById('valuesEx8').value;
     //Validates input
-    if (!isInteger(bars)) {
-        SetHTMLElement('errorEx8', 'Number must be a positive integer');
+    if (!isPositiveInteger(bars)) {
+        SetHTMLElement('errorEx8', 'Input must be a positive integer number');
         return;
     }
     //Converts to number

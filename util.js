@@ -28,3 +28,28 @@ function CleanResults() {
 function SetHTMLElement(id, content) {
     return document.getElementById(id).innerHTML = content;
 }
+
+function HideAll() {
+    let elements = document.querySelectorAll('.tab');
+    elements.forEach(element => {
+        element.classList.add('hidden');
+    });
+    let menus = document.querySelectorAll('.tabSelector');
+    menus.forEach(menu => {
+        menu.classList.remove('selected');
+    });
+}
+
+function Initialize(item) {
+    //Hides all other tabs
+    HideAll();
+    //Shows this tab
+    document.getElementById(`tab${item}`).classList.remove('hidden');
+    document.getElementById(item).classList.add('selected');
+}
+
+function GetFormater() {
+    const options = { style: 'currency', currency: 'USD' };
+    const numberFormater = new Intl.NumberFormat('en-US', options);
+    return numberFormater;
+}

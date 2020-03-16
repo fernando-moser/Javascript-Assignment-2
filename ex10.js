@@ -6,6 +6,8 @@ function Exercise10(tab) {
 function RunEx10() {
     //Clean all results
     CleanResults('outputEx10', 'inputEx10', 'errorEx10');
+    //Hides all tringles images
+    HideTriangleImages();
     //Gets input from user
     let angle1 = document.getElementById('value1Ex10').value;
     let angle2 = document.getElementById('value2Ex10').value;
@@ -24,6 +26,7 @@ function RunEx10() {
     let angle = '';
     if (checkAcuteTriangle) {
         SetHTMLElement('outputEx10', BuildList("Acute Triangle"));
+        document.querySelector('.acute').classList.remove('hidden');
         return;
     }
     let checkObtuseTriangle = results[1].some(item => {
@@ -31,6 +34,7 @@ function RunEx10() {
     });
     if (checkObtuseTriangle) {
         SetHTMLElement('outputEx10', BuildList("Obtuse Triangle"));
+        document.querySelector('.obtuse').classList.remove('hidden');
         return;
     }
     let checkRightTriangle = results[1].some(item => {
@@ -38,6 +42,7 @@ function RunEx10() {
     });
     if (checkRightTriangle) {
         SetHTMLElement('outputEx10', BuildList("Right Triangle"));
+        document.querySelector('.right').classList.remove('hidden');
         return;
     }
 
@@ -49,11 +54,11 @@ function RunEx10() {
 function Validation(angles) {
     let errorMessages = [];
 
-    let isPositiveInteger = angles.every(item => {
-        return isInteger(item);
+    let isValidNumber = angles.every(item => {
+        return isPositiveInteger(item);
     });
-    if (!isPositiveInteger) {
-        errorMessages.push('All angles must be positives integers');
+    if (!isValidNumber) {
+        errorMessages.push('All angles must be positives integer numbers');
     }
     let anglesNumbers = angles.map(item => {
         return Number(item);
@@ -68,4 +73,11 @@ function Validation(angles) {
         errorMessages.push('The sum of 3 angles must be 180');
     }
     return [errorMessages, anglesNumbers];
+}
+
+function HideTriangleImages () {
+    let triangles = document.querySelectorAll('.triangle');
+    triangles.forEach(item => {
+        item.classList.add('hidden');
+    });
 }

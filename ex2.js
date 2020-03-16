@@ -13,11 +13,11 @@ function RunEx2() {
     let inputStringArray = inputString.split(',');
     //Attempts to convert to integers
     let isAllIntegers = inputStringArray.every(item => {
-        return isInteger(item);
+        return isInteger(item) || isFloat(item);
     });
     //Checks if all integers
     if (!isAllIntegers) {
-        SetHTMLElement('errorEx2', "All inputs must be integer numbers");
+        SetHTMLElement('errorEx2', "All inputs must be numbers");
         return;
     }
     // Converts to Number
@@ -33,10 +33,10 @@ function RunEx2() {
         return a - b;
     });
     //Variables for results
-    let average = Math.round(sum / inputNumbersArray.length);
+    let average = (sum / inputNumbersArray.length).toFixed(2);
     let smallest = inputNumbersArray[0];
     let Largest = inputNumbersArray[inputNumbersArray.length - 1];
     //Displays
     SetHTMLElement('inputEx2', BuildList(inputString));
-    SetHTMLElement('outputEx2', BuildList(`Total: ${sum}, Average: ${average}, Smallest: ${smallest} Largest: ${Largest}`));
+    SetHTMLElement('outputEx2', BuildList(`Total: ${sum}`,`Average: ${average}`,`Smallest: ${smallest}`,`Largest: ${Largest}`));
 }

@@ -4,11 +4,13 @@ function Exercise7(tab) {
 }
 
 function RunEx7() {
+    //Clears previous results
+    CleanResults('inputEx7', 'outputEx7','errorEx7');
     //Gets input from user
     let inputStringValues = document.getElementById('valuesEx7').value;
     //Validates inputs
-    if(!isInteger(inputStringValues)) {
-        SetHTMLElement('errorEx7', 'Numbers must be integers');
+    if(!isPositiveInteger(inputStringValues)) {
+        SetHTMLElement('errorEx7', 'Inputs must be a positive integer number');
         return;
     }
     //Converts to number
@@ -28,5 +30,5 @@ function RunEx7() {
     let total = Math.round(baseCost + tax);
     //Display outputs
     SetHTMLElement('inputEx7',BuildList(inputStringValues));
-    SetHTMLElement('outputEx7',BuildList(`Base Cost: ${formater.format(baseCost)}, Tax: ${formater.format(tax)}, Total Cost: ${formater.format(total)}`));
+    SetHTMLElement('outputEx7',BuildList(`Base Cost: ${formater.format(baseCost)}`,`Tax: ${formater.format(tax)}`,`Total Cost: ${formater.format(total)}`));
 }

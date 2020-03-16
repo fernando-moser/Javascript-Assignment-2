@@ -12,7 +12,7 @@ function RunEx1() {
     let max = document.getElementById('maxEx1').value;
     //Validates if all integers
     if (!isInteger(min) || !isInteger(max)) {
-        SetHTMLElement('errorEx1','Inputs must be numbers');
+        SetHTMLElement('errorEx1','All inputs must be integer numbers');
         return;
     }
     //Converts to numbers

@@ -1,14 +1,14 @@
 window.onload = function () {
     //Hides all tabs
     HideAll();
+    //Show exercise 1 as default tab visible
+    Exercise1('1');
     //Adds an event listener in the list
     this.document.getElementById('tabList').addEventListener('click', ShowTab);
 }
 
 function ShowTab(e) {
-    
     let item = e.target.id;
-
     switch (item) {
         case '1':
             Exercise1(item);
@@ -45,31 +45,3 @@ function ShowTab(e) {
             break;
     }
 }
-
-function HideAll() {
-    let elements = document.querySelectorAll('.tab');
-    elements.forEach(element => {
-        element.classList.add('hidden');
-    });
-    let menus = document.querySelectorAll('.tabSelector');
-    menus.forEach(menu => {
-        menu.classList.remove('selected');
-    });
-}
-
-function Initialize(item) {
-    //Hides all other tabs
-    HideAll();
-    //Shows this tab
-    document.getElementById(`tab${item}`).classList.remove('hidden');
-    document.getElementById(item).classList.add('selected');
-}
-
-function GetFormater() {
-    const options = { style: 'currency', currency: 'USD' };
-    const numberFormater = new Intl.NumberFormat('en-US', options);
-    return numberFormater;
-}
-
-
-

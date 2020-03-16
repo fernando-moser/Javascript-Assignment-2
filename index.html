@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <title>Assignment 2</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Baloo+Chettan+2&display=swap" rel="stylesheet">
     <script src="main.js"></script>
     <script src="NumberChecker.js"></script>
     <script src="util.js"></script>
@@ -38,7 +39,6 @@
         <!-- Exercise 1 -->
         <div id="tab1" class="tab container">
             <h1 class="exercise-label">Enter two numbers</h1>
-            
             <label>Min: </label><input id="minEx1">
             <label>Max: </label><input id="maxEx1">
             <button id='btnEx1'>Display</button>
@@ -63,90 +63,119 @@
             <label>Values: </label><input id="valuesEx3">
             <label>Key: </label><input id="keyEx3">
             <button id="btnEx3">Search</button>
-            <div id="errorEx3" class="error"></div><br>
+            <div id="errorEx3" class="error"></div>
             <div id="inputEx3" class="input"></div>
             <h2 class="output-label">Output:</h2>
             <div id="outputEx3" class="output"></div>
         </div>
         <!-- Exercise 4 -->
         <div id="tab4" class="tab">
-            Enter the number<br><br>
-            Values<input id="valuesEx4">
+            <h1 class="exercise-label">Enter a number</h1>
+            <label>Values: </label><input id="valuesEx4">
             <button id="btnEx4">Generate</button>
-            <div id="errorEx4"></div><br>
-            Input:
-            <div id="inputEx4"></div>
-            Output:
-            <div id="outputEx4"></div>
+            <div id="errorEx4" class="error"></div>
+            <div id="inputEx4" class="input"></div>
+            <h2 class="output-label">Output:</h2>
+            <div id="outputEx4" class="output"></div>
         </div>
         <!-- Exercise 5 -->
         <div id="tab5" class="tab">
-            Enter the number<br><br>
-            Num of stars <input id="valuesEx5"><br>
-            Max starts per line <input id="maxEx5">
+            <h1 class="exercise-label">Enter a number</h1>
+            <label>Num of stars: </label><input id="valuesEx5">
+            <label>Max starts per line: </label><input id="maxEx5">
             <button id="btnEx5">Generate</button>
-            <div id="errorEx5"></div><br>
-            Input:
-            <div id="inputEx5"></div>
-            Output:
-            <div id="outputEx5"></div>
+            <div id="errorEx5" class="error"></div>
+            <div id="inputEx5" class="input"></div>
+            <h2 class="output-label">Output:</h2>
+            <div id="outputEx5" class="output"></div>
         </div>
         <!-- Exercise 6 -->
         <div id="tab6" class="tab">
-            Enter the number<br><br>
-            Enter a phrase <input id="valuesEx6"><br>
+            <h1 class="exercise-label">Enter a number</h1>
+            <label>Enter a phrase: </label><input id="valuesEx6">
             <button id="btnEx6">Generate</button>
-            <div id="errorEx6"></div><br>
-            Input:
-            <div id="inputEx6"></div>
-            Output:
-            <div id="outputEx6"></div>
+            <div id="errorEx6" class="error"></div>
+            <div id="inputEx6" class="input"></div>
+            <h2 class="output-label">Output:</h2>
+            <div id="outputEx6" class="output"></div>
         </div>
         <!-- Exercise 7 -->
         <div id="tab7" class="tab">
-            <p>shipping costs: </p>
-            <p>$5/item for fewer than 100 items</p> 
-            <p>$4/item for between 100 and 1,000 items</p>
-            <p>$3/item for more than 1,000 items</p>
-            Enter the number <input id="valuesEx7"><br>
-            <button id="btnEx7">Calculate</button>
-            <div id="errorEx7"></div><br>
-            Input:
-            <div id="inputEx7"></div>
-            Output:
-            <div id="outputEx7"></div>
+            <div class="painel-container">
+                <div class="painel">
+                    <h1 class="exercise-label">Shipping costs calculator</h1>
+                    <label>Value: </label><input id="valuesEx7">
+                    <button id="btnEx7">Calculate</button>
+                    <div id="errorEx7" class="error"></div>
+                    <div id="inputEx7" class="input"></div>
+                    <h2 class="output-label">Output:</h2>
+                    <div id="outputEx7" class="output"></div>
+                </div>
+                <div class="instructions">
+                    <p>Shipping costs (not including tax) are:<br> $5/item for fewer than 100 items,<br> $4/item for
+                        between 100 and 1,000 items,<br> and $3/item for more than 1,000 items.<p>
+                </div>
+            </div>
+
         </div>
         <!-- Exercise 8 -->
         <div id="tab8" class="tab">
-            Enter the number <input id="valuesEx8"><br>
-            <button id="btnEx8">Calculate</button>
-            <div id="errorEx8"></div><br>
-            Input:
-            <div id="inputEx8"></div>
-            Output:
-            <div id="outputEx8"></div>
+            <div class="painel-container">
+                <div class="painel">
+                    <h1 class="exercise-label">Snickers bar calculator</h1>
+                    <label>Value: </label><input id="valuesEx8">
+                    <button id="btnEx8">Calculate</button>
+                    <div id="errorEx8" class="error"></div>
+                    <div id="inputEx8" class="input"></div>
+                    <h2 class="output-label">Output:</h2>
+                    <div id="outputEx8" class="output"></div>
+                </div>
+                <div class="instructions">
+                    <p>A single Snickers bar costs $1.75,<br> and a box of 24 bars costs $32.<p>
+                </div>
+            </div>
         </div>
         <!-- Exercise 9 -->
         <div id="tab9" class="tab">
-            Enter the number <input id="valuesEx9"><br>
+            <h1 class="exercise-label">Convert the binary number to decimal (base 10)</h1>
+            <label>Value: </label><input id="valuesEx9">
             <button id="btnEx9">Calculate</button>
-            <div id="errorEx9"></div><br>
-            Input:
-            <div id="inputEx9"></div>
-            Output:
-            <div id="outputEx9"></div>
+            <div id="errorEx9" class="error"></div>
+            <div id="inputEx9" class="input"></div>
+            <h2 class="output-label">Output:</h2>
+            <div id="outputEx9" class="output"></div>
         </div>
         <!-- Exercise 10 -->
         <div id="tab10" class="tab">
-            Enter 1 angle <input id="value1Ex10"><br>
-            Enter 2 angle <input id="value2Ex10"><br>
-            Enter 3 angle <input id="value3Ex10"><br>
-            <button id="btnEx10">Calculate</button>
-            <div id="errorEx10"></div><br>
-            Input:
-            <div id="inputEx10"></div>
-            Output:
-            <div id="outputEx10"></div>
+            <h1 class="exercise-label">Triangle Checker</h1>
+            <div class="painel-inputs">
+                <div class="labels">
+                    <label>Enter angle 1: </label>
+                    <label>Enter angle 2: </label>
+                    <label>Enter angle 3: </label>
+                </div>
+                <div class="values">
+                    <input id="value1Ex10">
+                    <input id="value2Ex10">
+                    <input id="value3Ex10">
+                    <button id="btnEx10">Calculate</button>
+                </div>
+                <div class="painel-images">
+                    <div class="acute hidden triangle">
+                        <img src="acute.png">
+                    </div>
+                    <div class="right hidden triangle">
+                        <img src="right.png">
+                    </div>
+                    <div class="obtuse hidden triangle">
+                        <img src="obtuse-triangle.png">
+                    </div>
+                </div>
+            </div>
+            <div id="errorEx10" class="error"></div>
+            <div id="inputEx10" class="input"></div>
+            <h2 class="output-label">Output:</h2>
+            <div id="outputEx10" class="output"></div>
         </div>
     </div>
 </body>

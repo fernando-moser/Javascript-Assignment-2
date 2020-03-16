@@ -11,8 +11,8 @@ function RunEx4() {
     //Gets input from user
     let inputString = document.getElementById('valuesEx4').value;
     //Validates input
-    if (!isInteger(inputString)) {
-        SetHTMLElement('errorEx4', 'Number must be an integer number');
+    if (!isPositiveInteger(inputString)) {
+        SetHTMLElement('errorEx4', 'Input must be a positive integer number');
         return;
     }
     //Converts into integer

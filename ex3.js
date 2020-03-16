@@ -13,19 +13,19 @@ function RunEx3() {
     //Splits values into an array
     let inputStringArray = inputString.split(',');
     //Validates key value
-    if (!isInteger(keyInputString)) {
-        SetHTMLElement('errorEx3', 'key must be integer number');
+    if (!isInteger(keyInputString) && !isFloat(keyInputString)) {
+        SetHTMLElement('errorEx3', 'key must be a number');
         return;
     }
     //Converts key to integer
     let key = Number(keyInputString);
     //Validates values inputs
     let isAllNumbers = inputStringArray.every(item => {
-        return isInteger(item);
+        return isInteger(item) || isFloat(item);
     });
     //If they're not numbers, displays msg
     if(!isAllNumbers) {
-        SetHTMLElement('errorEx3', 'All inputs must be integer numbers');
+        SetHTMLElement('errorEx3', 'All inputs must be numbers');
         return;
     }
     //Converts values into numbers
@@ -34,11 +34,19 @@ function RunEx3() {
     });
     //Counts key values
     let howManyTimesTheKeyAppears = 0;
+    let keyNotFound = '';
     inputNumbersArray.forEach(item => {
         if (key === item) {
             howManyTimesTheKeyAppears++;
         }
+        // else {
+        //     keyNotFound = 'Key not found';
+        // }
     });
+    // if(keyNotFound.length !== 0) {
+    //     SetHTMLElement('errorEx3', keyNotFound);
+    //     return;
+    // }
     //Displays the results
     SetHTMLElement('inputEx3',BuildList(`Nums: ${inputString}`,`Key: ${keyInputString}`));
     SetHTMLElement('outputEx3',BuildList(howManyTimesTheKeyAppears));

@@ -16,7 +16,7 @@ function RunEx9() {
     });
     //If not, display error and ends function
     if(!allBinaries) {
-        SetHTMLElement('errorEx9', 'Only binary numbers (1 or 0)');
+        SetHTMLElement('errorEx9', 'Only binary positive numbers (1 or 0)');
         return;
     }
     //Converts each string into a number
