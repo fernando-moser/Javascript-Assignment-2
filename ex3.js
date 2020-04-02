@@ -39,14 +39,7 @@ function RunEx3() {
         if (key === item) {
             howManyTimesTheKeyAppears++;
         }
-        // else {
-        //     keyNotFound = 'Key not found';
-        // }
     });
-    // if(keyNotFound.length !== 0) {
-    //     SetHTMLElement('errorEx3', keyNotFound);
-    //     return;
-    // }
     //Displays the results
     SetHTMLElement('inputEx3',BuildList(`Nums: ${inputString}`,`Key: ${keyInputString}`));
     SetHTMLElement('outputEx3',BuildList(howManyTimesTheKeyAppears));

@@ -56,7 +56,7 @@ function RunEx9() {
             stringSum += `${temp} + `;
         }
     });
-    //Cuts out the ' + " from the resulting strings 
+    //Cuts the ' + ' out from the resulting strings 
     stringResult = stringResult.substr(0, (stringResult.length - 3));
     stringSum = stringSum.substr(0, (stringSum.length - 3));
     //Displays the result
